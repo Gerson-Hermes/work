@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+
+function phoneValid($number) {
+  echo strlen($number)."<br>";
+  
+  if(strlen($number) !== 14)/*Verificar tamanho do string*/
+  {
+  	echo "false <br>";
+  }
+  elseif($number[0] !== "(")
+  {
+  	echo "false <br>";
+  }
+  elseif($number[4] !== ")")
+  {
+  	echo "false <br>";
+  }
+  elseif($number[5] !== " ")
+  {
+  	echo "false <br>";
+  }
+  elseif($number[9] !== "-")
+  {
+  	echo "false <br>";
+  }
+  else
+  {
+  	echo "true <br>";
+  }
+}
+
+phoneValid("(123) 456-7890");
+?>
+
+</body>
+</html>
