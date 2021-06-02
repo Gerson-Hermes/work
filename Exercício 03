@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+function calculaPontuacao($text) {
+
+  $string = strlen($text);/*Tamanho string*/
+  $saida = array(0,0,0);/*Nova String*/
+  
+  for($x = 0; $x < $string ; $x++) {
+  
+    if ($text[$x] == 'A') {
+      	$saida[0]++;
+    } elseif ($text[$x] == 'B') {
+    	$saida[1]++;
+    } elseif ($text[$x] == 'C') {
+    	$saida[2]++;
+    }
+    
+  }
+  /*print_r ($saida);*/
+  echo "[$saida[0],$saida[1],$saida[2]]";
+}
+
+calculaPontuacao('ABCBACC');
+?>
+
+</body>
+</html>
