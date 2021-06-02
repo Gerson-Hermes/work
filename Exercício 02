@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+function removeCharacters($text) {
+
+  $string = strlen($text);/*Tamanho string*/
+  $saida = "";/*Nova String*/
+  $y = 0;/*Contagem de caracteres da Nova String*/
+  
+  for($x = 0; $x < $string ; $x++) {
+    /*Verifica se o caracter é alfanumérico*/
+    if (ctype_alnum($text[$x])) {
+      	$saida[$y] = $text[$x];
+      	$y++;
+    } elseif ($text[$x] == "-") {
+    	$saida[$y] = $text[$x];
+      	$y++;
+    } elseif ($text[$x] == "_") {
+    	$saida[$y] = $text[$x];
+      	$y++;
+    } elseif ($text[$x] == " ") {
+    	$saida[$y] = $text[$x];
+      	$y++;
+    }
+  }
+  echo $saida;
+}
+
+removeCharacters('D0n$c sed 0di0 du1');
+?>
+
+</body>
+</html>
