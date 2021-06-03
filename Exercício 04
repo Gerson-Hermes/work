@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+function dividirGrupos($entrada) {
+	$memoria = (array) null; /*Array vazio para armazenar amostras únicas dos caracteres repetidos*/
+    $saida = (array) null; /*Array vazio para armazenar grupos de caracteres idênticos*/
+    
+    /*Procura por caracteres unicos na string de entrada*/
+    for ($x = 0, $y = 0; $x < strlen($entrada); $x++) {  
+    	if (!in_array($entrada[$x],$memoria)) {  
+            $memoria[$y] = $entrada[$x];  
+ 			/*Procura por grupos de caracteres na string de entrada*/
+            for ($z = 0; $z < strlen($entrada); $z++) {  /
+                if ( $memoria[$y] == $entrada[$z] ) {  
+                    $saida[$y] = $saida[$y]."".$entrada[$z]; 
+                }
+            }
+          	$y++;
+        }
+    }
+    
+    /*print_r($memoria);
+    echo "<br>";*/
+    print_r($saida);
+}
+dividirGrupos("8abbbcc88999&&!!!_cab");
+?> 
+
+</body>
+</html>
